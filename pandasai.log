@@ -1,0 +1,87 @@
+2023-08-15 19:08:19 [INFO] Question: plot pie chart of Product wise total net amount
+
+2023-08-15 19:08:19 [INFO] Running PandasAI with openai LLM...
+2023-08-15 19:08:19 [INFO] Prompt ID: 1bbd151d-1564-4f06-8c6d-f48f7af133e1
+2023-08-15 19:08:21 [INFO] error_code=insufficient_quota error_message='You exceeded your current quota, please check your plan and billing details.' error_param=None error_type=insufficient_quota message='OpenAI API error received' stream_error=False
+2023-08-15 19:10:21 [INFO] Question: plot pie chart of Product wise total net amount
+2023-08-15 19:10:21 [INFO] Running PandasAI with openai LLM...
+2023-08-15 19:10:21 [INFO] Prompt ID: 81fcadb1-f2a6-485e-b2a7-760892aba57e
+2023-08-15 19:10:35 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Creating the dataframe
+data = {'Product Name': ['Product D', 'Product C', 'Product A', 'Product B', 'Product D'],
+        'Net Amount': [9913.91, 4341.32, 4960.52, 1142.75, 1944.46]}
+df = pd.DataFrame(data)
+
+# Grouping by Product Name and calculating the total net amount
+product_totals = df.groupby('Product Name')['Net Amount'].sum()
+
+# Plotting the pie chart
+plt.pie(product_totals, labels=product_totals.index, autopct='%1.1f%%')
+plt.title('Product wise total net amount')
+plt.show()
+                        ```
+                    
+2023-08-15 19:10:35 [INFO] 
+Code running:
+```
+product_totals = df.groupby('Product Name')['Net Amount'].sum()
+plt.pie(product_totals, labels=product_totals.index, autopct='%1.1f%%')
+plt.title('Product wise total net amount')
+plt.show()
+plt.close('all')
+```
+2023-08-16 09:45:47 [INFO] Question: total net amount
+2023-08-16 09:45:47 [INFO] Running PandasAI with openai LLM...
+2023-08-16 09:45:47 [INFO] Prompt ID: bc1c1315-f507-4b17-8dbb-5775af5ccfb1
+2023-08-16 09:45:50 [INFO] 
+                        Code generated:
+                        ```
+                        total_net_amount = df['Net Amount'].sum()
+print(total_net_amount)
+                        ```
+                    
+2023-08-16 09:45:50 [INFO] 
+Code running:
+```
+total_net_amount = df['Net Amount'].sum()
+print(total_net_amount)
+```
+2023-08-16 09:45:50 [INFO] Answer: 260329.37999999998
+2023-08-16 09:45:50 [INFO] Executed in: 2.9480860233306885s
+2023-08-16 09:46:18 [INFO] Question: plot pie chart of product wise total net amount
+2023-08-16 09:46:18 [INFO] Running PandasAI with openai LLM...
+2023-08-16 09:46:18 [INFO] Prompt ID: 9b0506e9-4151-4ec2-8b54-30db7d4f5f7d
+2023-08-16 09:46:29 [INFO] 
+                        Code generated:
+                        ```
+                        import pandas as pd
+import matplotlib.pyplot as plt
+
+# Creating the dataframe
+data = {'Product Name': ['Product D', 'Product B', 'Product D', 'Product A', 'Product C'],
+        'Net Amount': [4341.32, 1142.75, 9913.91, 1944.46, 4960.52]}
+df = pd.DataFrame(data)
+
+# Grouping by product name and calculating the total net amount
+product_totals = df.groupby('Product Name')['Net Amount'].sum()
+
+# Plotting the pie chart
+plt.pie(product_totals, labels=product_totals.index, autopct='%1.1f%%')
+plt.title('Product Wise Total Net Amount')
+plt.show()
+                        ```
+                    
+2023-08-16 09:46:29 [INFO] 
+Code running:
+```
+product_totals = df.groupby('Product Name')['Net Amount'].sum()
+plt.pie(product_totals, labels=product_totals.index, autopct='%1.1f%%')
+plt.title('Product Wise Total Net Amount')
+plt.show()
+plt.close('all')
+```
